@@ -8,20 +8,20 @@
   * Return: absolute value
   */
 
-int _abs(int)
+int _abs(int i)
 {
-	if (int < 0)
+	if (i < 0)
 	{
-		int = 0 - int;
-		_putchar(int);
+		i = 0 - i;
+		_putchar(i);
 	}
 
-	else if (int > 0)
+	else if (i > 0)
 	{
-		_putchar(int);
+		_putchar(i);
 	}
 
-	else if (int == 0)
+	else if (i == 0)
 	{
 		_putchar('0');
 	}
