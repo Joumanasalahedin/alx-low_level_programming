@@ -13,9 +13,8 @@ int main(void)
 	int counter;
 
 	for (counter = 0; str[counter] != '\0'; counter++)
-	{	
+	{
 		_putchar(str[counter]);
 	}
-	_putchar('\n');
 	return (0);
 }
