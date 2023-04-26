@@ -22,7 +22,7 @@ void jack_bauer(void)
 						break;
 					_putchar(hour1);
 					_putchar(hour2);
-					_putchar(';');
+					_putchar(':');
 					_putchar(min1);
 					_putchar(min2);
 					_putchar('\n');
