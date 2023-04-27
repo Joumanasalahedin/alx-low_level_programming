@@ -3,7 +3,7 @@
 /**
   * main - prints the numbers from 1 to 100
   *
-  * Return - Fizz Buzz
+  * Return: 0
   */
 
 int main(void)
