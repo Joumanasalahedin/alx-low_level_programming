@@ -30,12 +30,12 @@ void print_triangle(int size)
 			{
 				_putchar('#');
 			}
-			
+
 			if (a < (size - 1))
 			{
 				_putchar('\n');
 			}
 		}
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
