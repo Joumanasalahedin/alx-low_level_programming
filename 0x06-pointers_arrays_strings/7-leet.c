@@ -8,18 +8,18 @@
 
 char *leet(char *str)
 {
-	char *alph = "aAeEoOtTlL";
-	char *num = "4433007711";
+	char * alph = "aAeEoOtTlL";
+	char * num = "4433007711";
 
 	int a, n;
 
-	for (n = 0; str[n] != '\0'; n++)
+	for (a = 0; str[a] != '\0'; a++)
 	{
 		for (n = 0; n < 10; n++)
 		{
-			if (str[a] == alph[b])
+			if (str[a] == alph[n])
 			{
-				str[a] = num[b];
+				str[a] = num[n];
 				break;
 			}
 		}
