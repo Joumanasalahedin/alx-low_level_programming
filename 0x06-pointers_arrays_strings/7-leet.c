@@ -8,8 +8,8 @@
 
 char *leet(char *str)
 {
-	char * alph = "aAeEoOtTlL";
-	char * num = "4433007711";
+	char *alph = "aAeEoOtTlL";
+	char *num = "4433007711";
 
 	int a, n;
 
