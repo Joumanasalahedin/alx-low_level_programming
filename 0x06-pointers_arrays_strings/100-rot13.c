@@ -15,16 +15,11 @@ char *rot13(char *str)
 
 	for (a = 0; str[a] != '\0'; a++)
 	{
-		for (n = 0; n < 13; n++)
+		for (n = 0; n < 52; n++)
 		{
 			if (str[a] == alph[n])
 			{
 				str[a] = rot13[n];
-				break;
-			}
-			else if (str[a] == rot13[n])
-			{
-				str[a] = alph[n];
 				break;
 			}
 		}
