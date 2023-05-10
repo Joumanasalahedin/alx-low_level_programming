@@ -31,7 +31,7 @@ int strcomp(char *s, int a, int b)
 			return (1);
 		}
 
-		return (0 + strcomp(s, a + 1, b + 1));
+		return (0 + strcomp(s, a + 1, b - 1));
 	}
 	return (0);
 }
