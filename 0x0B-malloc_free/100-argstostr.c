@@ -23,14 +23,14 @@ char *argstostr(int ac, char **av)
 
 		for (j = 0; av[i][j] != '\0'; j++)
 			len++;
-		len++; //adds null terminator
+		len++;
 	}
 
-	str = malloc(sizeof(char) * (c + 1));
+	str = malloc(sizeof(char) * (len + 1));
 
 	if (str == NULL)
 	{
-		free(grid);
+		free(str);
 		return (NULL);
 	}
 
