@@ -15,7 +15,7 @@ int mul(int num1, int num2)
 }
 
 /**
-  * isdigit - checks if strings consist of only digits
+  * _isdigit - checks if strings consist of only digits
   * @str: strings
   * Return: 0 (Success)
   */
@@ -37,6 +37,7 @@ int _isdigit(char *str)
   * main - mutliplies two integers
   * @argc: number of command line arguments
   * @argv: array that contains the program command line arguments
+  * Return: product of two integers or Error
   */
 
 int main(int argc, char *argv[])
