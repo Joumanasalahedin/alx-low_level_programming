@@ -2,6 +2,26 @@
 #include <stdlib.h>
 
 /**
+  * _strlen - length of a string
+  *
+  * @s: string
+  *
+  * Return: length of string s
+  */
+
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*s != '\0')
+	{
+		len++;
+		s++;
+	}
+	return (len);
+}
+
+/**
   * _strcpy - copies the string pointed to by src to buffer
   * @dest: buffer pointed to
   * @src: string pointed to
@@ -44,7 +64,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	dog_name = malloc(sizeof(name));
+	dog_name = malloc(_strlen(name) + 1);
 
 	if (dog_name == NULL)
 	{
@@ -52,7 +72,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	dog_owner = malloc(sizeof(owner));
+	dog_owner = malloc(_strlen(owner) + 1);
 
 	if (dog_owner == NULL)
 	{
