@@ -29,7 +29,9 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < bytes; i++)
 	{
-		printf("%02x ", ptr[i] & 0xFF);
+		printf("%02x", ptr[i] & 0xFF);
+		if (i != bytes - 1)
+			printf(" ");
 	}
 	printf("\n");
 	return (0);
