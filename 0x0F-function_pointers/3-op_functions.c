@@ -55,7 +55,7 @@ int op_div(int a, int b)
 }
 
 /**
-  * op_mod - modolus of a and b
+  * op_mod - remainder of the division of a by b
   * @a: first integer
   * @b: second integer
   * Return: remainder of the divison of a by b
