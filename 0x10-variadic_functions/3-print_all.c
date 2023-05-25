@@ -19,7 +19,7 @@ void print_all(const char * const format, ...)
 		j = 0;
 		while (types[j])
 		{
-			if (format[i] == types[j] && c == 1)
+			if (format[i] == types[j] && a == 1)
 			{
 				printf(", ");
 				break;
@@ -28,16 +28,16 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'c':
-				printf("%c", va_arg(list, int)), c = 1;
+				printf("%c", va_arg(list, int)), a = 1;
 				break;
 			case 'i':
-				printf("%d", va_arg(list, int)), c = 1;
+				printf("%d", va_arg(list, int)), a = 1;
 				break;
 			case 'f':
-				printf("%f", va_arg(list, double)), c = 1;
+				printf("%f", va_arg(list, double)), a = 1;
 				break;
 			case 's':
-				str = va_arg(list, char *), c = 1;
+				str = va_arg(list, char *), a = 1;
 				if (str == NULL)
 				{
 					printf("(nil)");
