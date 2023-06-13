@@ -31,8 +31,9 @@ void file_error(int fd_from, int fd_to, char *argv[])
 
 int main(int argc, char *argv[])
 {
-	int fd_from, fd_to, nrd, nwr;
-	char buffer[BUFFER_SIZE];
+	int fd_from, fd_to, err_close;
+	ssize_t nchars, nwr;
+	char buffer[1024];
 
 	if (argc != 3)
 	{
@@ -44,20 +45,18 @@ int main(int argc, char *argv[])
 	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
 	file_error(fd_from, fd_to, argv);
 
-	while ((nrd = read(fd_from, buffer, BUFFER_SIZE)) > 0)
+	nchars = 1024;
+	while (nchars == 1024)
 	{
-		nwr = write(fd_to, buffer, nrd);
+		nchars = read(fd_from, buffer, 1024);
+		if (nchars == -1)
+			file_error(-1, 0, argv);
+		
+		nwr = write(fd_to, buffer, nchars);
 		if (nwr == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
-			exit(99);
-		}
+			file_error(0, -1, argv);
 	}
-	if (nrd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
+	
 	close(fd_from);
 	if (close(fd_from) == -1)
 	{
