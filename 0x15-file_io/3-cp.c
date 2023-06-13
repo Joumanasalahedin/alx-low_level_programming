@@ -7,7 +7,7 @@
   * @argv: arguments vector
   */
 
-void file_error(int file_from, int file_to, char *argv[])
+void file_error(int fd_from, int fd_to, char *argv[])
 {
 	if (fd_from == -1)
 	{
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
 	fd_from = open(argv[1], O_RDONLY);
 	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
-	file_error(file_from, file_to, argv);
+	file_error(fd_from, fd_to, argv);
 
 	while ((nrd = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 	{
