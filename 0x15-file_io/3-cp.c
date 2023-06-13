@@ -31,7 +31,7 @@ void file_error(int fd_from, int fd_to, char *argv[])
 
 int main(int argc, char *argv[])
 {
-	int fd_from, fd_to, err_close;
+	int fd_from, fd_to;
 	ssize_t nchars, nwr;
 	char buffer[1024];
 
