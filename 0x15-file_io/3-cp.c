@@ -31,7 +31,7 @@ void file_error(int fd_from, int fd_to, char *argv[])
 
 int main(int argc, char *argv[])
 {
-	int fd_from, fd_to;
+	int fd_from, fd_to, close_err;
 	ssize_t nchars, nwr;
 	char buffer[1024];
 
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 	}
 
 	fd_from = open(argv[1], O_RDONLY);
-	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
+	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	file_error(fd_from, fd_to, argv);
 
 	nchars = 1024;
@@ -57,17 +57,18 @@ int main(int argc, char *argv[])
 			file_error(0, -1, argv);
 	}
 	
-	close(fd_from);
-	if (close(fd_from) == -1)
+	close_err = close(fd_from);
+	if (close_err == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
 		exit(100);
 	}
 
-	close(fd_to);
-	if (close(fd_to) == -1)
+	close_err = close(fd_to);
+	if (close_err == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
 		exit(100);
-	} return (0);
+	}
+	return (0);
 }
