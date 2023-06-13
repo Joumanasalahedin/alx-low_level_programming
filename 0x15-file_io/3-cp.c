@@ -2,8 +2,8 @@
 
 /**
   * file_error - print error message
-  * @file_from: file_from
-  * @file_to: file_to
+  * @fd_from: file_from
+  * @fd_to: file_to
   * @argv: arguments vector
   */
 
@@ -51,12 +51,12 @@ int main(int argc, char *argv[])
 		nchars = read(fd_from, buffer, 1024);
 		if (nchars == -1)
 			file_error(-1, 0, argv);
-		
+
 		nwr = write(fd_to, buffer, nchars);
 		if (nwr == -1)
 			file_error(0, -1, argv);
 	}
-	
+
 	close_err = close(fd_from);
 	if (close_err == -1)
 	{
