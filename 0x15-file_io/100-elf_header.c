@@ -166,7 +166,7 @@ void check_sys(char *ptr)
 		exit(98);
 
 	printf("ELF Header:\n");
-	print_magic(ptr);
+	magic(ptr);
 
 	if (sys == '1')
 		printf("  Class:                             ELF32\n");
