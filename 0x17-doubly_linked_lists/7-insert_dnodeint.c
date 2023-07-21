@@ -5,6 +5,7 @@
   * @h: double pointer to head of the list
   * @idx: index of the list where new node should be added
   * @n: node to be added
+  * Return: adress of the new node
   */
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
@@ -16,14 +17,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (h == NULL)
 		return (NULL);
-
 	new_node = malloc(sizeof(dlistint_t));
 
 	if (new_node == NULL)
 		return (NULL);
 
 	new_node->n = n;
-
 	if (idx == 0)
 	{
 		new_node->next = *h;
